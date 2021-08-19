@@ -35,7 +35,7 @@ b) выбранному параметру и его значению
 Требуется локально установленная MongoDB (https://docs.mongodb.com/manual/installation/)
 GitHub проект:
  ```bash
-git clone https://github.com/Jostic-git/shop.git
+gh repo clone Den707/test_Smart_Design
 ```
 # Установки
 
