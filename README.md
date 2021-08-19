@@ -29,3 +29,42 @@ b) выбранному параметру и его значению
 * создать товар
 * найти его по параметру
 * получить детали найденного товара
+
+
+# Установка
+Требуется локально установленная MongoDB (https://docs.mongodb.com/manual/installation/)
+GitHub проект:
+
+git clone https://github.com/Jostic-git/shop.git
+
+# Установки
+
+-Необходимые зависимости:
+
+pip install -r requirements.txt
+
+-FastAPI (сервер на 127.0.0.1:8000):
+
+uvicorn main:app --reload
+
+# Создание товара
+
+curl -X POST "http://127.0.0.1:8000/item" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"title\":\"Iphone 13\",\"description\":\"cellphone Iphone\",\"parameters\":[{\"model\":\"13\"},{\"batery\":\"3000\"},{\"os\": \"ios\"},{\"date\": \"20.09.2021\"}]}"
+
+# Получение товара: 
+1)по ID
+
+curl -X GET "http://127.0.0.1:8000/item/5fbc06cb11bcf5cbbd8b6c3d" -H  "accept: application/json"
+
+2)Получение товаров по определенным параметрам
+
+curl -X GET "http://127.0.0.1:8000/items/?title=Iphone&description=cellphone&model=13&os=ios" -H  "accept: application/json"
+
+\\title, description - название, всегда присусттвуют у товара.
+
+# Документация
+
+http://127.0.0.1:8000/docs
+http://127.0.0.1:8000/redoc
+
+\\генерируется сервером
